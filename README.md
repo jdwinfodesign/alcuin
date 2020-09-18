@@ -1,2 +1,3 @@
 # alcuin
-Based on Stan Doherty's Project Alcuin DITA demo content.
+Based on DITA demo content Stan Doherty's [Project Alcuin](https://github.com/StanDoherty/project-alcuin).
+To get involved, please contact Stan Doherty at stan@modularwriting.com.
