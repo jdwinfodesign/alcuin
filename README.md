@@ -1,3 +1,14 @@
-# alcuin
-Based on DITA demo content Stan Doherty's [Project Alcuin](https://github.com/StanDoherty/project-alcuin).
-To get involved, please contact Stan Doherty at stan@modularwriting.com.
+# Project Alcuin
+It takes a community to develop effective content developers. 
+
+Alcuin of Northumbria (England) was an 8th-Century CE scholar, mathematician, college administrator, and close political advisor to King Charlemagne the Great. At each phase of his long career, Alcuin mastered the writing and speaking skills necessary to succeed -- whether he was developing a theological treatise, defining a curriculum for the Palace School of Charlemagne, or distributing political tracts against the religious persecution of non-Christians. By virtue of his influence in each field, he inspired a level of collaboration and coordination across institutions that was unparalleled in his day.
+
+Project Alcuin is an industry-academic collaboration to develop technical communication resources for undergrads and new college hires. The project delivers the following elements:
+1. Crisp descriptions of the top five content development skills
+2. Industry college-hire and new-employee training materials
+3. Real-world, sample technical content in substantial breadth and depth
+4. Multiple content markup formats (Word, Markdown, XML DITA)
+5. Detailed writing exercises based on the sample content and assessment guidelines
+6. Community-sourced content development, maintenance, and curation (GitHub)
+
+To get involved, please contact Stan Doherty at stan@modularwriting.com. 

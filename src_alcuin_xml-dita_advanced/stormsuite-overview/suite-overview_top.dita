@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_lrt_xg3_n2b">
+    <title>StormSuite Product Overview</title>
+    <body>
+        <p>Welcome to the <cite>StormSuite Product Overview Guide</cite>. This publication provides
+            an overview of StormSuite, its supporting components, and the way it addresses your
+            hybrid infrastructure challenges.</p>
+        <section id="section_qfn_c33_n2b">
+            <title>Hybrid infrastructure</title>
+            <p>Whether your organization is transitioning all its services to a cloud-based
+                infrastructure or blending on-prem and cloud infrastructures to manage bursts in
+                demand, you are in the working your way through the major challenges of hybrid
+                infrastructure management.</p>
+            <ul id="ul_dlx_5hk_42b">
+                <li>
+                    <p>Lack of alignment between cloud and on-prem management APIs.</p>
+                </li>
+                <li>
+                    <p>Lack of unified reporting capacity, availability, and efficiency reporting
+                        across cloud and on-prem infrastructures. </p>
+                </li>
+                <li>
+                    <p>Lack of comprehensive resource monitoring across cloud and on-prem
+                        infrastructures. </p>
+                </li>
+                <li>
+                    <p>Redundant management interfaces. </p>
+                </li>
+            </ul>
+            <fig id="fig_n2v_lcp_n2b">
+                <title>Hybrid infrastructures</title>
+                <image href="../graphics/diagram_architecture_01.png" placement="break"
+                    id="image_o2p_4cp_n2b" scale="60">
+                    <alt>Alt text</alt>
+                </image>
+            </fig>
+            <p>Although the resources that you make available to your clients run on different
+                infrastructures, the management services that you design, implement, and maintain
+                for those infrastructures do not have to be redundant. You can build hybrid
+                infrastructures without redundant management services for those on-prem or cloud
+                resources. With StormSuite, you can build out and scale a hybrid infrastructure as
+                easily as an exclusively on-prem or exclusively cloud infrastructure. What
+                differentiates successful hybrid IT organizations will be the ability to streamline
+                and consolidate the management of hybrid (parallel) services without compromising
+                security, scalability, or efficiency (cost). </p>
+        </section>
+        <section id="section_nml_d33_n2b">
+            <title>The StormSuite approach</title>
+            <p>The key to making a hybrid infrastructure work is aligning abstract and physical
+                APIs. At StormSystems Inc. we do APIs – lots of them. For example, our StormProxy
+                API builds an array of objects for StormCluster that serve as proxies to the
+                physical resources available in an on-prem, clustered network. For each physical
+                resource, there is a corresponding proxy object that maintains a statefull
+                connection to its physical resource. </p>
+            <fig id="fig_fdq_gdy_42b">
+                <title>StormProxy for Clusters</title>
+                <image placement="break" href="../graphics/diagram_stormproxy_cluster.png"
+                    id="image_ymq_jdy_42b" scale="70">
+                    <alt>StormProxy for Clusters</alt>
+                </image>
+            </fig>
+            <p>One API manages resource discovery, another manages parallel state monitoring, and
+                yet another exposes this proxy information to hybrid management services in
+                StormSuite. Similarly, StormProxy uses a different set of APIs in StormCloud to
+                build its proxy array of cloud-based resources – be they managed through Kubernetes
+                containerized services or more traditional PaaS (Platform as a Service) systems. </p>
+            <fig id="fig_a1l_kdy_42b">
+                <title>StormProxy for Cloud</title>
+                <image placement="break" href="../graphics/diagram_stormproxy_cloud.png"
+                    id="image_tsv_mdy_42b" scale="70">
+                    <alt>StormProxy for Cloud</alt>
+                </image>
+            </fig>
+            <p>StormProxy is vendor agnostic; it can discover cloud resources hosted by any of the
+                popular cloud infrastructures (AWS, IBM, Microsoft, or Oracle). APIs such as those
+                for StormProxy create a level playing field – cloud resources and on-prem resources
+                can be provisioned, monitored, and balanced by virtue of a shared management API
+                between cloud proxies and on-prem proxies – StormCenter. </p>
+            <fig id="fig_g1f_qdy_42b">
+                <title>StormCenter for Clusters and Cloud</title>
+                <image placement="break" href="../graphics/diagram_stormproxy_all.png"
+                    id="image_xjy_tdy_42b" scale="70">
+                    <alt>StormCenter for Clusters and Cloud</alt>
+                </image>
+            </fig>
+            <p>With StormSuite, you can deploy one management infrastructure (StormCenter) that
+                supports services deployed on both cloud and data center clusters. StormSuite
+                provides the level of abstraction between on-prem resources and cloud resources to
+                make a hybrid infrastructure manageable and efficient. </p>
+        </section>
+        <section id="section_s4m_d33_n2b">
+            <title>StormCluster overview</title>
+            <p>StormCluster provides a set of interfaces to the following Cluster-specific
+                services:</p>
+            <ul id="ul_m4m_yq3_n2b">
+                <li>
+                    <p>Network-attached storage</p>
+                </li>
+                <li>
+                    <p>Redundancy-aware node configurations</p>
+                </li>
+                <li>
+                    <p>Failover and disaster-recovery policies</p>
+                </li>
+                <li>
+                    <p>StormSuite administrators interact with StormCloud interfaces via
+                        StormCenter.</p>
+                </li>
+            </ul>
+            <fig id="fig_pjm_wcp_n2b">
+                <title>StormCluster</title>
+                <image placement="break" href="../graphics/diagram_architecture_02.png"
+                    id="image_ssb_ycp_n2b" scale="60">
+                    <alt>StormCluster</alt>
+                </image>
+            </fig>
+        </section>
+        <section id="section_gbm_d33_n2b">
+            <title>StormCloud overview</title>
+            <p>StormCloud provides a set of interfaces to the following Cloud-specific services:</p>
+            <ul id="ul_ddm_4q3_n2b">
+                <li>
+                    <p><i>Cloud client interfaces</i>: The access and security interfaces required
+                        to allow web clients, mobile apps, or dedicated management applications to
+                        interact with Cloud services.</p>
+                </li>
+                <li>
+                    <p><i>Cloud storage</i>: The storage interfaces that allow multiple clients to
+                        access stored objects, be they physically residing on a public cloud,
+                        private cloud, or hybrid cloud. The cloud storage needs to be agile,
+                        flexible, scalable, multi-tenant, and secure.</p>
+                </li>
+                <li>
+                    <p><i>Service-oriented delivery</i>: The logical interfaces necessary to allow
+                        Cloud-based services to become available to multiple clients and tenants ñ
+                        Software as a service (SaaS), Development as a service (DaaS), Platform as a
+                        service (PaaS), and Infrastructure as a service (IaaS).</p>
+                </li>
+            </ul>
+            <fig id="fig_nbj_qcp_n2b">
+                <title>StormCloud</title>
+                <image placement="break" href="../graphics/diagram_architecture_03.png"
+                    id="image_lwf_tcp_n2b" scale="60">
+                    <alt>StormCloud</alt>
+                </image>
+            </fig>
+            <p>StormSuite administrators interact with StormCloud interfaces via StormCenter.</p>
+        </section>
+        <section id="section_l1n_d33_n2b">
+            <title>StormCenter - unified services and APIs</title>
+            <p>StormCenter provides services that communicate with the StormCloud and StormCluster
+                proxy objects. </p>
+            <fig id="fig_as1_cdp_n2b">
+                <title>StormCenter</title>
+                <image placement="break" href="../graphics/diagram_architecture_04.png"
+                    id="image_rjr_ddp_n2b" scale="60">
+                    <alt>StrormCenter</alt>
+                </image>
+            </fig>
+            <p>One set of interfaces and services to perform the following management tasks in a
+                hybrid environment:</p>
+            <ul id="ul_xnd_2r3_n2b">
+                <li>
+                    <p>StormCenter-Analyzer: description.</p>
+                </li>
+                <li>
+                    <p>StormCenter-Backup: description.</p>
+                </li>
+                <li>
+                    <p>StormCenter-Balance: description.</p>
+                </li>
+                <li>
+                    <p>StormCenter-Report: description.</p>
+                </li>
+                <li>
+                    <p>StormCenter-Secure: description.</p>
+                </li>
+                <li>
+                    <p>StormCenter-Store: description.</p>
+                </li>
+            </ul>
+        </section>
+        <section id="section_dmj_fdp_n2b">
+            <title>StormCenter-Admin</title>
+            <p>xx</p>
+            <p>In the larger context of StormSuite, StormCenter-Admin provides:</p>
+            <ul id="ul_v4n_ldp_n2b">
+                <li>
+                    <p>x</p>
+                </li>
+                <li>
+                    <p>x</p>
+                </li>
+                <li>
+                    <p>x</p>
+                </li>
+                <li>
+                    <p>x</p>
+                </li>
+                <li>
+                    <p>x</p>
+                </li>
+                <li>
+                    <p>x</p>
+                </li>
+                <li>
+                    <p>x</p>
+                </li>
+            </ul>
+            <fig id="fig_tyt_dz3_42b">
+                <title>StormCenter-Admin</title>
+                <image placement="break" href="../graphics/screen_stormcenter-console_admin0.png"
+                    id="image_mvn_gz3_42b" scale="70">
+                    <alt>StormCenter-Admin</alt>
+                </image>
+            </fig>
+        </section>
+        <section id="section_qkn_d33_n2b">
+            <title>StormCenter-Analyzer</title>
+            <p>StormCenter-Analyzer provides central administration for resources hosted on the
+                Cloud or in your Cluster.</p>
+            <p>In the larger context of StormSuite, StormCenter-Analyzer does the following:</p>
+            <ul id="ul_b5c_cdm_n2b">
+                <li>
+                    <p>Conducts a complete inventory of available compute, network, and storage
+                        resources accessible to StormCloud or to StormCluster.</p>
+                </li>
+                <li>
+                    <p>Provisions a central resource database with inventoried resources.</p>
+                </li>
+                <li>
+                    <p>Monitors the availability and general health of each resource indentified in
+                        its inventory via layered "heartbeat" agents.</p>
+                </li>
+                <li>
+                    <p>Serves inventory and status information to StormCenter-Report.</p>
+                </li>
+            </ul>
+            <fig id="fig_lrk_vz3_42b">
+                <title>StormCenter-Analyzer</title>
+                <image placement="break" href="../graphics/screen_stormcenter-console_analyzer0.png"
+                    id="image_vvm_xz3_42b" scale="70">
+                    <alt>StormCenter-Analyzer</alt>
+                </image>
+            </fig>
+        </section>
+        <section id="section_ksn_d33_n2b">
+            <title>StormCenter-Backup </title>
+            <p>StormCenter-Backup provides central administration for configuration and data backups
+                for all resources hosted on the Cloud or in your Cluster.</p>
+            <p>In the larger context of StormSuite, StormCenter-Backup does the following:</p>
+            <ul id="ul_rs3_hdm_n2b">
+                <li>
+                    <p>Provides a single Backup Policy Manager for resources available to StormCloud
+                        or to StormCluster.</p>
+                </li>
+                <li>
+                    <p>Provides an easy-to-use web interface (through StormView-Console) to create,
+                        update, and manage backup policy definitions and profiles.</p>
+                </li>
+                <li>
+                    <p>Executes backup policies and reports backup statistics to
+                        StormCenter-Report.</p>
+                </li>
+            </ul>
+            <fig id="fig_mwv_hbj_42b">
+                <title>StormCenter-Backup</title>
+                <image placement="break" href="../graphics/screen_stormcenter-console_backup0.png"
+                    id="image_lnj_jbj_42b" scale="70">
+                    <alt>StormCenter-Backup</alt>
+                </image>
+            </fig>
+        </section>
+        <section id="section_gzn_d33_n2b">
+            <title>StormCenter-Balance</title>
+            <p>StormCenter-Balance provides basic resource balancing and capacity management
+                services across resources hosted out of the Cloud or out of the Cluster.</p>
+            <p>In the larger context of StormSuite, StormCenter-Balance does the following:</p>
+            <ul id="ul_i5y_ndm_n2b">
+                <li>
+                    <p>Provides a single Capacity and Performance Manager for resources available to
+                        StormCloud or to StormCluster.</p>
+                </li>
+                <li>
+                    <p>Provides an easy-to-use web interface (through StormView-Console) to create,
+                        update, and manage storage capacity or compute performance definitions and
+                        profiles.</p>
+                </li>
+                <li>Monitors capacity and performance threshholds throughout the system and reports
+                    to any of the StormView clients.</li>
+                <li>
+                    <p>Reports general capacity and performance metrics to StormCenter-Report.</p>
+                </li>
+            </ul>
+            <fig id="fig_xtc_lbj_42b">
+                <title>StormCenter-Balance</title>
+                <image placement="break" href="../graphics/screen_stormcenter-console_balance0.png"
+                    id="image_bbw_lbj_42b" scale="70">
+                    <alt>StormCenter-Balance</alt>
+                </image>
+            </fig>
+        </section>
+        <section id="section_oj4_d33_n2b">
+            <title>StormCenter-Report</title>
+            <p>StormCenter-Report collects metrics from all the StormCenter applications and makes
+                them viewable in all the StormView clients.</p>
+            <p>In the larger context of StormSuite, StormCenter-Report does the following:</p>
+            <ul id="ul_wzh_w2m_n2b">
+                <li>
+                    <p>Provides a single point of collection for both StormCloud and StormCluster
+                        metrics on the following:</p>
+                    <ul id="ul_m1q_2fm_n2b">
+                        <li>
+                            <p>Capacity utilization</p>
+                        </li>
+                        <li>
+                            <p>Networking performance</p>
+                        </li>
+                        <li>
+                            <p>Application performance</p>
+                        </li>
+                        <li>
+                            <p>System availability</p>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <p>x</p>
+                </li>
+                <li>
+                    <p>x</p>
+                </li>
+                <li>
+                    <p>x</p>
+                </li>
+                <li>
+                    <p>x</p>
+                </li>
+                <li>
+                    <p>x</p>
+                </li>
+                <li>
+                    <p>x</p>
+                </li>
+            </ul>
+            <fig id="fig_fvz_4bj_42b">
+                <title>StormCenter-Report</title>
+                <image placement="break" href="../graphics/screen_stormcenter-console_report0.png"
+                    id="image_uxx_qbj_42b" scale="70">
+                    <alt>StormCenter-Report</alt>
+                </image>
+            </fig>
+            <p>StormView calls StormCenter-Report to obtain the most current data tables and
+                diagrams.</p>
+        </section>
+        <section id="section_sq4_d33_n2b">
+            <title>StormCenter-Secure</title>
+            <p>StormCenter-Secure provides a combination of account management and network security
+                services for all StormSuite services and applications.</p>
+            <p>In the larger context of StormSuite, StormCenter-Secure does the following:</p>
+            <ul id="ul_whp_x2m_n2b">
+                <li>
+                    <p>Provides enterprise-class account management.</p>
+                </li>
+                <li>
+                    <p>Reports general capacity and performance metrics to StormCenter-Report.</p>
+                </li>
+                <li>
+                    <p>x</p>
+                </li>
+                <li>
+                    <p>x</p>
+                </li>
+                <li>
+                    <p>x</p>
+                </li>
+                <li>
+                    <p>x</p>
+                </li>
+                <li>
+                    <p>x</p>
+                </li>
+            </ul>
+            <fig id="fig_gkk_sbj_42b">
+                <title>StormCenter-Secure</title>
+                <image placement="break" href="../graphics/screen_stormcenter-console_secure0.png"
+                    id="image_vkj_tbj_42b" scale="70">
+                    <alt>StormCenter-Secure</alt>
+                </image>
+            </fig>
+            <p>StormView calls StormCenter-Report to obtain the most current data on system and
+                user-account security.</p>
+        </section>
+        <section id="section_jmz_5k3_n2b">
+            <title>StormCenter-Store</title>
+            <p>StormCenter-Store provides a master inventory of storage devices and assets hosted in
+                the Cloud or in a local Cluster. StormCenter-Store does not store objects, but makes
+                its global inventory of stored assets available by proxy to all StormSuite
+                applications and services.</p>
+            <ul id="ul_fk2_y2m_n2b">
+                <li>
+                    <p>x</p>
+                </li>
+                <li>
+                    <p>x</p>
+                </li>
+                <li>
+                    <p>x</p>
+                </li>
+                <li>
+                    <p>x</p>
+                </li>
+                <li>
+                    <p>x</p>
+                </li>
+                <li>
+                    <p>x</p>
+                </li>
+                <li>
+                    <p>x</p>
+                </li>
+            </ul>
+            <fig id="fig_gg1_vbj_42b">
+                <title>StormCenter-Store</title>
+                <image placement="break" href="../graphics/screen_stormcenter-console_store0.png"
+                    id="image_x1c_wbj_42b" scale="70">
+                    <alt>StormCenter-Store</alt>
+                </image>
+            </fig>
+        </section>
+        <section id="section_b11_vk3_n2b">
+            <title>StormView</title>
+            <p>StormView provides a single interface for configuring, monitoring, and administering
+                StormSuite assets ñ be they in the Cloud or in a local Cluster. StormView provides
+                that consistent, complete, and elegant interface for StormSuite adminstrators.</p>
+            <p>StormView provides three, functionally equivalent interfaces:</p>
+            <ul id="ul_f3q_y2m_n2b">
+                <li>
+                    <p>StormView-Console: Desktop graphical console</p>
+                </li>
+                <li>
+                    <p>StormView-Mobile: Mobile graphical interface</p>
+                </li>
+                <li>
+                    <p>StormView-REST-API: RESTful application programming interface</p>
+                </li>
+                <li>
+                    <p>x</p>
+                </li>
+                <li>
+                    <p>x</p>
+                </li>
+                <li>
+                    <p>x</p>
+                </li>
+                <li>
+                    <p>x</p>
+                </li>
+            </ul>
+        </section>
+        <section id="section_on1_vk3_n2b">
+            <title>StormView-Console</title>
+            <p>For administrators working on laptops or workstations, StormView-Console provides
+                full access to all administrative functions supported by StormCenter.</p>
+            <ul id="ul_k51_z2m_n2b">
+                <li>
+                    <p>x</p>
+                </li>
+                <li>
+                    <p>x</p>
+                </li>
+                <li>
+                    <p>x</p>
+                </li>
+                <li>
+                    <p>x</p>
+                </li>
+                <li>
+                    <p>x</p>
+                </li>
+                <li>
+                    <p>x</p>
+                </li>
+                <li>
+                    <p>x</p>
+                </li>
+            </ul>
+        </section>
+        <section id="section_d1f_vk3_n2b">
+            <title>StormView-Mobile</title>
+            <p>For administrators working on mobile devices, StormView-Mobile provides full access
+                to all administrative functions supported by StormCenter.</p>
+            <ul id="ul_ppp_z2m_n2b">
+                <li>
+                    <p>x</p>
+                </li>
+                <li>
+                    <p>x</p>
+                </li>
+                <li>
+                    <p>x</p>
+                </li>
+                <li>
+                    <p>x</p>
+                </li>
+                <li>
+                    <p>x</p>
+                </li>
+                <li>
+                    <p>x</p>
+                </li>
+                <li>
+                    <p>x</p>
+                </li>
+            </ul>
+        </section>
+        <section id="section_mpf_vk3_n2b">
+            <title>StormView-REST-API</title>
+            <p>For application developers and integrators, StormView-REST-API provides full access
+                to all administrative functions</p>
+            <p>supported by StormCenter.</p>
+        </section>
+        <section id="section_rbg_vk3_n2b">
+            <title>StormSuite - the complete solution</title>
+            <p>StormSuite combines powerful cluster management services with a simple-to-use,
+                intuitive front-end application. This combination places control of the full
+                resources of your computing infrastructure into the hands of your team members and
+                it does so in a way the establishes, and sustains, the highest levels of
+                security.</p>
+            <simpletable frame="all" relcolwidth="1.0* 2.23*" id="simpletable_m31_2gm_n2b">
+                <sthead>
+                    <stentry>Category</stentry>
+                    <stentry>Description</stentry>
+                </sthead>
+                <strow>
+                    <stentry>
+                        <p>Key StormSuite benefits</p>
+                    </stentry>
+                    <stentry>
+                        <ul id="ul_f1f_1fm_n2b">
+                            <li>
+                                <p>Maximum flexibility</p>
+                            </li>
+                            <li>
+                                <p>Designed for extensibility</p>
+                            </li>
+                            <li>
+                                <p>Ease of management</p>
+                            </li>
+                            <li>
+                                <p>Extreme scalability</p>
+                            </li>
+                            <li>
+                                <p>Intuitive reports and data visualizations</p>
+                            </li>
+                            <li>
+                                <p>Industry-leading support</p>
+                            </li>
+                            <li>
+                                <p/>
+                            </li>
+                        </ul>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry>
+                        <p>Key StormSuite features</p>
+                    </stentry>
+                    <stentry>
+                        <ul id="ul_bsm_1fm_n2b">
+                            <li>
+                                <p>Easy to use and manage for onsite administrators</p>
+                            </li>
+                            <li>
+                                <p>High performing, scalable architecture</p>
+                            </li>
+                            <li>
+                                <p>Comprehensive, intelligent scheduling policies</p>
+                            </li>
+                            <li>
+                                <p>Complete customization flexibility for integrators</p>
+                            </li>
+                            <li>
+                                <p>Heterogeneous platform support</p>
+                            </li>
+                            <li>
+                                <p>Continuous live data reporting services</p>
+                            </li>
+                            <li>
+                                <p>Robust security services</p>
+                            </li>
+                        </ul>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry/>
+                    <stentry/>
+                </strow>
+            </simpletable>
+            <p>Component architecture delivers maximum scalability and flexibility StormSuite
+                components become a powerful workload management suite for demanding, distributed
+                high-performance computing environments. Not only is a complete set of workload
+                management capabilities available, but the reporting benefits of StormCenter-Report
+                work to reduce cycle times and maximize productivity in mission critical
+                environments. Equipped with StormView client interfaces, your system administration
+                team and designated system users can collaborate to coordinate their business
+                priorities so that the overall effect is improved even more.</p>
+            <ul id="ul_z3h_bfm_n2b">
+                <li>
+                    <p>x</p>
+                </li>
+                <li>
+                    <p>x</p>
+                </li>
+                <li>
+                    <p>x</p>
+                </li>
+                <li>
+                    <p>x</p>
+                </li>
+                <li>
+                    <p>x</p>
+                </li>
+                <li>
+                    <p>x</p>
+                </li>
+                <li>
+                    <p>x</p>
+                </li>
+            </ul>
+        </section>
+        <section id="section_yjg_vk3_n2b">
+            <title>tbd</title>
+            <p/>
+        </section>
+        <section id="section_xtg_vk3_n2b">
+            <title>tbd</title>
+            <p/>
+        </section>
+    </body>
+</topic>
